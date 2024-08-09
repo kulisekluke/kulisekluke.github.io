@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+    <img src="pedro.jpg" class="pedro">
+</div>
+<style>
+    .wrapper { 
+        overflow: hidden;
+    animation: spin 10s
+    linear infinite
+    }
+    .pedro {
+        scale: 1.1;
+    animation: bounce 200ms
+    linear infinite alternate;
+    
+    }
+     @keyframes bounce {
+        to { translate: 0 20px;}
+     }
+     @keyframes spin {
+        to { rotate: -1turn;}
+     }
+
+</style>
+
+
+</body>
+</html>
