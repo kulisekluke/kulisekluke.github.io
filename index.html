@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +18,7 @@
             background-color: #f0f0f0;
             color: #333;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         /* Header Section */
@@ -39,9 +40,10 @@
         }
 
         .kulisek {
-            font-size: 90px;
+            font-size: 80px;
             font-weight: bold;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
+            animation: fadeIn 2s ease-in-out;
         }
 
         .typewriter {
@@ -50,7 +52,7 @@
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid white;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
         }
 
         @keyframes typing {
@@ -62,6 +64,11 @@
             50% { border-color: transparent; }
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         /* Portfolio Section */
         .cast2 {
             padding: 50px;
@@ -70,30 +77,49 @@
         }
 
         .portfolio h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
+            font-size: 36px;
+            margin-bottom: 40px;
             color: #007BFF;
+            position: relative;
+        }
+
+        .portfolio h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #007BFF;
+            display: block;
+            margin: 10px auto 0;
         }
 
         .portfolio-item {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             overflow: hidden;
-            margin-bottom: 20px;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            margin-bottom: 30px;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
         }
 
         .portfolio-item img {
-            width: 200px;
+            width: 250px;
             height: auto;
-            margin-right: 20px;
             border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
         }
 
         .portfolio-info {
@@ -101,22 +127,23 @@
         }
 
         .portfolio-info h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 28px;
+            margin-bottom: 15px;
         }
 
         .portfolio-info p {
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #555;
         }
 
         .portfolio-info .button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             color: white;
             background-color: #007BFF;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 18px;
             transition: background-color 0.3s ease;
         }
 
@@ -127,34 +154,31 @@
         /* About Section */
         .about {
             background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
         .about img {
-            border-radius: 10px;
+            border-radius: 50%;
             height: 200px;
-            margin-right: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .about h2 {
             margin-bottom: 20px;
             font-family: 'Lucida Sans', sans-serif;
+            font-size: 32px;
         }
 
-        .container {
-            display: flex;
-            align-items: center;
-        }
-
-        .container h3 {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        .about p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
         }
 
         /* Footer Section */
@@ -181,7 +205,7 @@
 
     <div class="cast1">
         <p class="kulisek">Kulíšek</p>
-        <p class="typewriter">Python Developer</p>
+        <p class="typewriter" id="typed-text">Python Developer</p>
     </div>
 
     <div class="cast2">
@@ -195,28 +219,59 @@
                     <a href="https://github.com/kulisekluke/kulisekbot" class="button">View Project on GitHub</a>
                 </div>
             </div>
+
+            <div class="portfolio-item">
+                <img src="modpack.png" alt="Modpack">
+                <div class="portfolio-info">
+                    <h3>Můj Modpack</h3>
+                    <p>Tento modpack jsem vytvořil pro Minecraft, můžete si jej stáhnout a zkusit <a href="link_to_modpack">zde</a>.</p>
+                    <a href="https://github.com/kulisekluke/muj-modpack" class="button">View Modpack on GitHub</a>
+                </div>
+            </div>
         </section>
 
         <section class="about">
-            <h2>About Me</h2>
-            <div class="container">
-                <img src="dogisek.jpg" alt="Profile Picture">
-                <h3>
-                    Name: Lukáš (Luke) <br>
-                    Surname: Hnátek <br>
-                    Age: 15 (2008) <br>
-                    City: Mělník <br>
-                    Nationality: Czech <br>
-                    Languages: Czech, English <br>
-                    Programming: Python, HTML & CSS
-                </h3>
-            </div>
+            <img src="dogisek.jpg" alt="Profile Picture">
+            <h2>O mně</h2>
+            <p>Jsem Lukáš (Luke), 15 let, žiji v Mělníku, programátor se zaměřením na Python, HTML & CSS. Mým cílem je rozvíjet své dovednosti a vytvářet zajímavé projekty.</p>
         </section>
     </div>
 
     <footer>
         <p>&copy; 2024 <a href="xdd.html">shhhh</a> kulisekluke. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const typedText = document.getElementById("typed-text");
+            const phrases = ["Python Developer", "Web Enthusiast", "Bot Creator"];
+            let currentPhrase = 0;
+            let currentLetter = 0;
+
+            function typePhrase() {
+                if (currentLetter < phrases[currentPhrase].length) {
+                    typedText.textContent += phrases[currentPhrase].charAt(currentLetter);
+                    currentLetter++;
+                    setTimeout(typePhrase, 150);
+                } else {
+                    setTimeout(deletePhrase, 2000);
+                }
+            }
+
+            function deletePhrase() {
+                if (currentLetter > 0) {
+                    typedText.textContent = phrases[currentPhrase].substring(0, currentLetter - 1);
+                    currentLetter--;
+                    setTimeout(deletePhrase, 100);
+                } else {
+                    currentPhrase = (currentPhrase + 1) % phrases.length;
+                    setTimeout(typePhrase, 500);
+                }
+            }
+
+            typePhrase();
+        });
+    </script>
 
 </body>
 </html>
