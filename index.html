@@ -3,206 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Luke - Home</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Global Styles */
+        body, html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Section */
+        .cast1 {
+            background-image: url('pexels-eberhardgross-1287145.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cast1 p {
+            margin-bottom: 20px;
+        }
+
+        .kulisek {
+            font-size: 90px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .typewriter {
+            font-size: 40px;
+            font-family: monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            50% { border-color: transparent; }
+        }
+
+        /* Portfolio Section */
+        .cast2 {
+            padding: 50px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #007BFF;
+        }
+
+        .portfolio-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .portfolio-item img {
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        .portfolio-info {
+            text-align: left;
+        }
+
+        .portfolio-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info .button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .portfolio-info .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .about img {
+            border-radius: 10px;
+            height: 200px;
+            margin-right: 20px;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .container h3 {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            position: relative;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
-   <script src="script.js"></script>
-   
-   <div class="cast1">
-     
-    <p class="kulisek">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspKulíšek &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-</p>
-    <p style="font-size: 40px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"   class="typewriter">&nbspPython Developer</p>
-</div>
-<div class="cast2">
-<section class="portfolio">
-    <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Portfolio</h2>
-    <div class="portfolio-item">
-        <img style="margin-left: 10px;" src="coding.png" alt="Project 1">
-        <div class="portfolio-info">
-            <h3>Discord Bot (kulíšekbot)</h3>
-            <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">discord bot written in python you can test it <a style="color: black;" href="discord.gg/PTF9ktgCha">here</a></p>
-            <a href="https://github.com/kulisekluke/kulisekbot" class="button">View Project on github</a>
-        </div>
+
+    <div class="cast1">
+        <p class="kulisek">Kulíšek</p>
+        <p class="typewriter">Python Developer</p>
     </div>
-</section>
-<section>
-    <div style="background-color:  white; border-radius: 10px;margin-left: 10px;max-width: 55%;padding-top: 5px;padding-bottom: 1px; margin-bottom: 10px;">
-        <div style="margin-left: 10px;">
-        <h2 style="margin-top: 0px;font-family: cursive;">about me</h2>
-        <a style="font-family: cursive;color: black;">my cute doggo that's keeping me alive &heartsuit;</a>
+
+    <div class="cast2">
+        <section class="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item">
+                <img src="coding.png" alt="Project 1">
+                <div class="portfolio-info">
+                    <h3>Discord Bot (kulíšekbot)</h3>
+                    <p>Discord bot written in Python, you can test it <a href="discord.gg/PTF9ktgCha">here</a>.</p>
+                    <a href="https://github.com/kulisekluke/kulisekbot" class="button">View Project on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2>About Me</h2>
             <div class="container">
-                
                 <img src="dogisek.jpg" alt="Profile Picture">
                 <h3>
-                    Name: Lukáš (Luke) 
-                    <br> Surname: Hnátek 
-                    <br> Age: 15 (2008)
-                    <br> City: Mělník 
-                    <br> Nationality: Czech
-                    <br> Languages: Czech, English
-                    <br> Programming: python,HTML & CSS
+                    Name: Lukáš (Luke) <br>
+                    Surname: Hnátek <br>
+                    Age: 15 (2008) <br>
+                    City: Mělník <br>
+                    Nationality: Czech <br>
+                    Languages: Czech, English <br>
+                    Programming: Python, HTML & CSS
                 </h3>
             </div>
-</section>
+        </section>
+    </div>
 
-<footer>
-    <p>&copy; <a href="xdd.html">shhhh</a> 2024 kulisekluke. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 <a href="xdd.html">shhhh</a> kulisekluke. All rights reserved.</p>
+    </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-    
-.typewriter {
-  color: #fff;
-  font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid rgb(255, 255, 255); /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: 
-    typing 1s steps(90, end),
-    blink-caret .5s step-end infinite;
-  max-width: fit-content;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: rgb(255, 255, 255) }
-}
-.cast1 {
-  
-  background-image: url(pexels-eberhardgross-1287145.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white; /* Optional: Change text color to ensure readability */
-  width: 100%;
-  height: 936px; /* Full viewport height */
-  display: flex; /* Optional: Flexbox for centering content */
-  align-items: center; /* Optional: Center content vertically */
-  justify-content: center; /* Optional: Center content horizontally */
-  box-sizing: border-box; /* Ensures padding/border doesn’t affect width/height */
-}
-.above-text {
-  font-size: 20px; /* Adjust font size for the new text */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-}
-body, html{
-  margin: 0;
-  background-color: lightgray;
-}
-.kulisek {
-  font-size: 90px;
-  margin-left: px;
-}
-.cast2 {
-  background-color: lightgray;
-
-  width: 100%;
-  height: 300px; /* Full viewport height */
-  padding-top: 1px;
-
-
-
-}
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-.portfolio {
-  margin: 20px 0;
-}
-
-.portfolio h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.portfolio-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  background: #f9f9f9;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-}
-
-.portfolio-info {
-  padding: 20px;
-  max-width: 600px;
-}
-
-.portfolio-info h3 {
-  margin-top: 0;
-  font-size: 24px;
-}
-
-.portfolio-info p {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.portfolio-info .button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.portfolio-info .button:hover {
-  background-color: #0056b3;
-}
-.container {
-  display: flex;
-  align-items: center; /* Vertically centers items */
-  gap: 20px; /* Adds space between the image and the text */
-}
-
-.container img {
-  height: 200px; /* Sets the height of the image */
-  border-radius: 10px; /* Optional: Adds rounded corners to the image */
-}
-
-.container h3 {
-  margin: 0; /* Removes default margin */
-  font-family: Arial, sans-serif; /* Optional: Sets font family */
-}
-</style>
 </body>
 </html>
